@@ -8,7 +8,6 @@ using namespace pattos::common;
 Filesystem::Filesystem()
  : ata0m(0x1F0, true)
 {
-	//ata0m = pattos::drivers::AdvancedTechnologyAttachment(0x1F0, true);
 
 
 }
@@ -21,7 +20,6 @@ bool Filesystem::Check_File_System()
 {
 
 	char PATTOS_MAGIC[] = "PATTOS\0";
-	//char PATTOS_MAGIC[] = "PATTOS\0";
 	char checking[] = "aaaaaa\0";
 
 	ata0m.Read28(0, (uint8_t*)checking, 6);
@@ -393,11 +391,11 @@ void Filesystem::clearSector(uint32_t sector)
 void Filesystem::clear1ksectors()
 {
 
-	char zeros[] = "\0\0\0";
+	char zeros[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
 
-	for(int i=0; i<1000; i++)
+	for(int i=0; i<100; i++)
 	{
-		ata0m.Write28(i, zeros, 3);
+		ata0m.Write28(i, zeros, 512);
 		ata0m.Flush();
 	}
 
@@ -447,7 +445,7 @@ void Filesystem::cd(char dirname[], uint8_t len)
 	for(;i<512;i++)
 	{
 		//Possibly Found first char of string
-		if(buffer[i] = dirname[0])
+		if(buffer[i] == dirname[0])
 		{
 			lencheck++;
 			i++;
@@ -542,7 +540,7 @@ void Filesystem::pedit(char name[], pattos::common::uint8_t len)
 	for(;i<512;i++)
 	{
 		//Possibly Found first char of string
-		if(buffer[i] = name[0])
+		if(buffer[i] == name[0])
 		{
 			lencheck++;
 			i++;
@@ -563,6 +561,10 @@ void Filesystem::pedit(char name[], pattos::common::uint8_t len)
 				i++;
 			}
 
+		}
+		else
+		{
+			lencheck = 0;
 		}
 
 		//If it found the string
@@ -684,7 +686,7 @@ void Filesystem::rm(char dirname[], uint8_t len)
 	for(;i<512;i++)
 	{
 		//Possibly Found first char of string
-		if(buffer[i] = dirname[0])
+		if(buffer[i] == dirname[0])
 		{
 			lencheck++;
 			i++;
@@ -711,18 +713,6 @@ void Filesystem::rm(char dirname[], uint8_t len)
 		if(lencheck == len)
 		{
 			
-
-			/*if(buffer[i] == '/')
-			{
-				found = true;
-				break;
-			}
-			else
-			{
-				Display::printstr("Found string but not with the /\n");
-
-			}
-			*/
 			found = true;
 			break;
 		}

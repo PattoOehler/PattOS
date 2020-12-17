@@ -86,7 +86,7 @@ void Port32Bit::Write(uint32_t data)
 
 
 	__asm__ volatile ("outl %0, %1" : : "a" (data), "Nd" (portnumber));
-	//__asm__ volatile ("outw %0, %1" : : "a" (data_bot), "Nd" (portnumber));
+
 	
 	
 }

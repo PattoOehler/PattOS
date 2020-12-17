@@ -34,13 +34,10 @@ void commandline::GetCommand()
 		commandline::Get_Command(currentlocation.y -1);
 
 		commandline::StartCommandLine();
-		//Display::printstr("STRCMP is working!");
 
 	}
 
 
-
-	//Display::CharAt(x,y);
 
 
 }

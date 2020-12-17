@@ -181,15 +181,11 @@ uint32_t InterruptManager::handleInterrupt(uint8_t interruptNumber, uint32_t esp
 		return ActiveInterruptManager->DoHandleInterrupt(interruptNumber, esp);
 	
 	
-	//printf("Check_Timer\n");
-	
 	return esp;
 }
 
 uint32_t InterruptManager::DoHandleInterrupt(uint8_t interruptNumber, uint32_t esp)
 {
-
-	//print_num(interruptNumber);
 
 
 	if(handlers[interruptNumber] != 0)
@@ -222,8 +218,6 @@ uint32_t InterruptManager::DoHandleInterrupt(uint8_t interruptNumber, uint32_t e
 			picSlaveCommand.Write(0x20);
 	}
 	
-	//if(interruptNumber != 0x20)
-		//printf(" INTERRUPT");
 	
 	return esp;
 }

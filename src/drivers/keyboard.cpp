@@ -123,11 +123,6 @@ uint32_t KeyboardDriver::HandleInterrupt(uint32_t esp)
 	if(key < less_than) {
 	
 		KeyboardDriver::Print_KeyPresses_To_Screen(key);
-	//	char *printing = "KEYBOARD 0X00 \n";	
-	//	char *hex = "0123456789ABCDEF";
-	//	printing[11] = hex[(key >> 4) & 0x0F];
-	//	printing[12] = hex[key & 0x0F];
-	//	printf(printing);
 		
 	}
 	else if(key == 170 | key == 54+128) {

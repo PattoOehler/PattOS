@@ -53,6 +53,7 @@ pattos.iso: mykernel.bin
 	rm -r iso
 	
 	
+	
 clean:
 	rm -r obj
 	rm *.bin

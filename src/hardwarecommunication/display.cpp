@@ -180,7 +180,6 @@ void Display::go_to_last_typed_char_in_line(uint16_t line)
 		return;
 
 	static uint16_t* VideoMemory = (uint16_t*)0xb8000;
-	//VideoMemory[80*y+x] = (VideoMemory[80*y+x] & 0xFF00) | character;
 
 	uint16_t x = 75;
 	uint16_t current_char=0x0000;
@@ -308,7 +307,6 @@ void Display::printint(uint8_t inta)
 void Display::clearscreen()
 {
 
-	//Display::print_char_at('a', 3, 10);
 
 	for(int i=3; i<76; i++)
 	{
@@ -379,13 +377,10 @@ Display::x_and_y Display::modify_and_get_current_xy(int8_t add_x, int8_t add_y, 
 char Display::CharAt(int8_t x, int8_t y)
 {
 
-	//char returning;
 
 	static uint16_t* VideoMemory = (uint16_t*)0xb8000;
-	//VideoMemory[80*y+x] = (VideoMemory[80*y+x] & 0xFF00) | character;
 
 	return VideoMemory[80*y+x] & 0x00FF;
 
-	//return returning;
 
 }

@@ -54,7 +54,6 @@ void commands::Print_First_Sector()
 	a.Print_First_Sector();
 
 
-	//Filesystem::Print_First_Sector();
 
 }
 

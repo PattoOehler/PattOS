@@ -16,30 +16,32 @@ namespace pattos
 		class Filesystem
 		{
 		protected:
-			// Interrupt 14
-		    pattos::drivers::AdvancedTechnologyAttachment ata0m;
-		    //pattos::drivers::AdvancedTechnologyAttachment ata0m(0x1F0, true);
-		    //Display::printstr("ATA Primary Master: ");
-		    //ata0m.Identify();
-		    //Display::printchar('\n');
 
-		    //char buffer[] = "I aaaaa aaaa aa read and write this to the hard drive plz...";
-		    //ata0m.Write28(0, (uint8_t*)buffer, 62);
-		    //ata0m.Flush();
-		    //ata0m.Read28(0, (uint8_t*)buffer, 62);
-		    //Display::printchar('\n');
-		    //Display::printstr(buffer);
-		    
-		    //AdvancedTechnologyAttachment ata0s(0x1F0, false);
-		    //Display::printstr("ATA Primary Slave: ");
-		    //ata0s.Identify();
-		    
+			//COMMENTS ARE FOR AN EXAMPLE TO USE AND EXPANSION 
+				// Interrupt 14
+			pattos::drivers::AdvancedTechnologyAttachment ata0m;
+			    //pattos::drivers::AdvancedTechnologyAttachment ata0m(0x1F0, true);
+			    //Display::printstr("ATA Primary Master: ");
+			    //ata0m.Identify();
+			    //Display::printchar('\n');
 
-		    // Interrupt 15
-		    //AdvancedTechnologyAttachment ata1m(0x170, true);
-		    //AdvancedTechnologyAttachment ata1s(0x170, false);
-		    // Next inline                     0x1E8  Interrupt ?
-		    // Next inline                     0x168  Interrupt ?	
+			    //char buffer[] = "I aaaaa aaaa aa read and write this to the hard drive plz...";
+			    //ata0m.Write28(0, (uint8_t*)buffer, 62);
+			    //ata0m.Flush();
+			    //ata0m.Read28(0, (uint8_t*)buffer, 62);
+			    //Display::printchar('\n');
+			    //Display::printstr(buffer);
+			    
+			    //AdvancedTechnologyAttachment ata0s(0x1F0, false);
+			    //Display::printstr("ATA Primary Slave: ");
+			    //ata0s.Identify();
+			    
+
+			    // Interrupt 15
+			    //AdvancedTechnologyAttachment ata1m(0x170, true);
+			    //AdvancedTechnologyAttachment ata1s(0x170, false);
+			    // Next inline                     0x1E8  Interrupt ?
+			    // Next inline                     0x168  Interrupt ?	
 
 
 		public:

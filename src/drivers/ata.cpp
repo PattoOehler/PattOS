@@ -5,6 +5,8 @@ using namespace pattos::common;
 using namespace pattos::hardwarecommunication;
 
 
+void printf(char* str);
+
 AdvancedTechnologyAttachment::AdvancedTechnologyAttachment(pattos::common::uint16_t portBase, bool master)
 : dataPort(portBase),
   errorPort(portBase + 1),
@@ -114,11 +116,11 @@ void AdvancedTechnologyAttachment::Read28(pattos::common::uint32_t sector, patto
 	{
 		uint16_t wdata = dataPort.Read();
 
-		//char* print = "  \0";
-		//print[1] = (wdata >> 8) & 0x00FF;
-		//print[0] = wdata & 0x00FF;
+		char* print = "  \0";
+		print[1] = (wdata >> 8) & 0x00FF;
+		print[0] = wdata & 0x00FF;
 
-		//Display::printstr(print);
+		printf(print);
 
 		data[i] = wdata & 0x00FF;
 		if(i+1 < count)
@@ -166,7 +168,18 @@ void AdvancedTechnologyAttachment::Write28(pattos::common::uint32_t sector, patt
 	}
 
 	for(uint16_t i = count +(count %2); i< bytesPerSector; i+=2)
+	{
+		uint16_t wdata = 0;
+
+		char* print = "aa\0";
+
+		Display::printstr(print);
+		Display::printchar(14);
+		Display::printchar(14);
+
+
 		dataPort.Write(0x0000);
+	}
 
 
 }

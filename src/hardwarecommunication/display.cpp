@@ -322,6 +322,24 @@ void Display::clearscreen()
 }
 
 
+void Display::do_nothing(char* str)
+{
+
+    //Old print statment, currently in use as a "wait" function, some functions don't work without one
+
+	//ToDo - take out the static variables - havent tested without them, weird errors happen when this function is taken out
+	
+    static uint16_t* VideoMemory = (uint16_t*)0xb8000;
+
+    static uint16_t x=0, y=0;
+    
+    static uint8_t Shift=0;
+    
+   
+}
+
+
+
 
 Display::x_and_y Display::modify_and_get_current_xy(int8_t add_x, int8_t add_y, uint8_t set_x, uint8_t set_y){
 

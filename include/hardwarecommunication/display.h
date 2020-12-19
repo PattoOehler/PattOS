@@ -34,9 +34,11 @@ namespace pattos
 			static void printstr(const char printing[]);
 			static void printint(pattos::common::uint8_t inta);
 			static void clearscreen();
+			static void do_nothing(char* str);
 			static void go_to_last_typed_char_in_line(pattos::common::uint16_t line);
 			static void ChangeBackground(bool background, pattos::common::uint8_t Color, int x, int y);
 			static char CharAt(pattos::common::int8_t x, pattos::common::int8_t y);
+
 
 
 		};

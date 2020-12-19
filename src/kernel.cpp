@@ -14,20 +14,6 @@ using namespace pattos::common;
 using namespace pattos::drivers;
 using namespace pattos::hardwarecommunication;
 
-void printf(char* str)
-{
-
-    //Old print statment, currently in use as a "wait" function, some functions don't work without one
-
-
-    static uint16_t* VideoMemory = (uint16_t*)0xb8000;
-
-    static uint16_t x=0, y=0;
-    
-    static uint8_t Shift=0;
-    
-   
-}
 
 
 typedef void (*constructor)();

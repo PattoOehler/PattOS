@@ -5,7 +5,6 @@
 using namespace pattos::common;
 using namespace pattos::hardwarecommunication;
 
-void printf(char* str);
 
 void print_num(uint8_t num) {
 
@@ -36,8 +35,8 @@ void print_num(uint8_t num) {
     printing[1] = nums[ index2 ];
     printing[2] = nums[ index3 ];
 
-  	printf(printing);
-    printf("\n");
+  	Display::do_nothing(printing);
+    Display::do_nothing("\n");
 
 
 }
@@ -198,7 +197,7 @@ uint32_t InterruptManager::DoHandleInterrupt(uint8_t interruptNumber, uint32_t e
 		char* hex = "0123456789ABCDEF";
 		printing[30] = hex[(interruptNumber >> 4) & 0x0F];
 		printing[31] = hex[interruptNumber & 0x0F];
-		printf(printing);
+		Display::do_nothing(printing);
 	}
 	else if(interruptNumber == 0x20) 
 	{

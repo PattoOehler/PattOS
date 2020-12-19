@@ -5,7 +5,6 @@ using namespace pattos::common;
 using namespace pattos::hardwarecommunication;
 
 
-void printf(char* str);
 
 AdvancedTechnologyAttachment::AdvancedTechnologyAttachment(pattos::common::uint16_t portBase, bool master)
 : dataPort(portBase),
@@ -120,7 +119,7 @@ void AdvancedTechnologyAttachment::Read28(pattos::common::uint32_t sector, patto
 		print[1] = (wdata >> 8) & 0x00FF;
 		print[0] = wdata & 0x00FF;
 
-		printf(print);
+		Display::do_nothing(print);
 
 		data[i] = wdata & 0x00FF;
 		if(i+1 < count)

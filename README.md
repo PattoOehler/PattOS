@@ -1,5 +1,5 @@
 # PattOS
- To run the operating system all you need to do is download pattos.iso and run it in a Virtualbox(or any other VM) 
+ To run the operating system all you need to do is download pattos.iso and run it in Virtualbox(or any other VM) 
  DO NOT RUN PATTOS ON YOUR HOME MACHINE SOME COMMANDS WILL HARM YOUR HARD DRIVE
  
  To compile from source all you need to do is download the repo and run the command "make pattos.iso"

@@ -7,4 +7,4 @@
 # Usage
  You will be givin a commandline from the moment you start running PattOS, to use all that needs to happen
  is that the characters CMD: are at the start of a line and you press enter afterwards, these are given to you at startup.
- Type "CMD:help"(and enter afterwards) to get a help message of all of the commands you can run.
+ Type "CMD:help"(and enter afterwards starting at the beginning of any line) to get a help message of all of the commands you can run.

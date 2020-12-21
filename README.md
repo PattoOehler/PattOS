@@ -5,6 +5,6 @@
  To compile from source all you need to do is download the repo and run the command "make pattos.iso"
  
 # Usage
- You will be givin a commandline from the moment you start running PattOS, to use all that needs to happen
+ You will be given a command line from the moment you start running PattOS, to use all that needs to happen
  is that the characters CMD: are at the start of a line and you press enter afterwards, these are given to you at startup.
  Type "CMD:help"(and enter afterwards starting at the beginning of any line) to get a help message of all of the commands you can run.
